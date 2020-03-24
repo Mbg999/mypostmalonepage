@@ -1,0 +1,403 @@
+﻿/*
+    Autor: Miguel Belmonte Granados
+    Fecha: 14/11/2019
+    Última modificación: 18/11/2019
+*/
+/* RESETS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: whitesmoke;
+    font-family: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:not(.a-clean){ /* a-clean only has this purpose, for a clean a*/
+    font-size: 17px;
+    font-weight: bold;
+}
+/* /RESETS */
+
+/* FONTS */
+@font-face { /* https://fonts.google.com/specimen/Kaushan+Script?selection.family=Kaushan+Script */
+    font-family: 'Kaushan Script';
+    src: URL('../fonts/KaushanScript-Regular.ttf') format('truetype');
+}
+@font-face { /* https://fonts.google.com/specimen/Josefin+Sans?selection.family=Josefin+Sans */
+    font-family: 'Oxygen';
+    src: url('../fonts/Oxygen-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('../fonts/Oxygen-Bold.ttf');
+    font-weight: bold;
+}
+
+.menu, h1, h2, h3 {
+    font-family: 'Kaushan Script', cursive;
+}
+
+*:not(.menu):not(h1):not(h2) {
+    font-family: 'Oxygen';
+}
+
+h2 {
+    font-size: 50px;
+    text-shadow: 2px 2px rgb(28,28,28);
+}
+
+h3 {
+    font-size: 25px;
+}
+/* /FONTS */
+
+/* MAIN CONTAINER */
+html, body {
+    height: 100%;
+}
+
+#main_container {
+    min-height: 100%;
+    min-width: 830px;
+    background-image: url(../imgs/bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+/* /MAIN CONTAINER */
+
+/* HEADER */
+#main_container > header {
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 2px 2px 8px 2px rgb(69, 68, 76);
+}
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(28, 28, 28);
+}
+
+nav span {
+    display: inline-block;
+    color: whitesmoke;
+    padding: 0 12px 0px 12px;
+    font-size: 25px;
+}
+
+#pm {
+    font-size: 60px;   
+}
+
+nav > span:hover {
+    transform: scale(1.1);
+}
+
+/* NAV-MAIN */
+#nav-main {
+    box-shadow: 1px 1px 20px rgb(61, 61, 69);
+    position: relative;
+}
+
+.selected {
+    text-decoration: underline;
+}
+/* /NAV-MAIN */
+
+/* NAV-RSS */
+#nav-rss {
+    padding-top: 5px;
+    padding-bottom: 1px;
+    height: 30px;
+}
+/* /NAV-RSS */
+/* NAV */
+/* HEADER */
+
+/* MAIN */
+main {
+    min-width: 745px;
+    max-width: 1000px;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    position: relative;
+}
+/* /MAIN */
+
+/* ASIDE */
+:target { /* for skip the sticky header problem */
+    display: block;    
+    position: relative;     
+    top: -115px;
+    visibility: hidden;
+}
+/* /ASIDE */
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-top: 15px;
+    height: 48px;
+    width: 100%;
+    background-color: rgb(28, 28, 28);
+}
+
+footer  {
+    text-align: center;
+    font-size: 12px;
+    padding: 12px;
+}
+
+footer > div {
+    display: inline-block;
+}
+
+footer > div:first-child{
+    float: left;
+    padding-left: 20px;
+}
+footer > div:last-child{
+    float: right;
+    padding-right: 20px;
+}
+
+footer span {
+    display: block;
+}
+/* /FOOTER */
+
+/* 
+    CARD 
+    Autor: Miguel Belmonte Granados
+    Last Update: 16/11/2019
+    How to use:
+    .card -> needed to set the necesary width at the usage .css
+        .card-header
+            .card-video or .card-img
+        .card-content
+            h2 or h3
+            p
+            .card-footer (a, span)
+*/
+.card {
+    /* width: 100%; set the necesary width at the usage .css*/
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(28,28,28);
+}
+
+.card-header, .card-video, .card-img {
+    width: 100%;
+    min-height: 100px;
+    display: block;
+}
+
+.card-content {
+    width: 100%;
+    display: block;
+    background-color: rgb(28,28,28);
+    /* alambre 1 */
+    /* border-top: 15px;
+    border-bottom: 15px;
+    border-style: solid;
+    border-image: url(../imgs/alambre1_horizontal.png) 60 round; */
+    /* alambre 2 */
+    border-top: 20px;
+    border-bottom: 20px;
+    border-style: solid;
+    border-image: url(../imgs/alambre2_horizontal.png) 80 round;
+    color: whitesmoke;
+    border-radius: 0 0 10px 10px;
+}
+
+.card-header, .card-video, .card-img {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-content, .card-content > p {
+    border-radius: 0 0 10px 10px;
+}
+
+.card h3 {
+    margin-top: 15px;
+    padding-left: 18px;
+    font-size: 18px;
+}
+
+.card p {
+    padding: 25px 25px 10px 25px;
+}
+
+.card p::first-letter {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-footer {
+    display: block;
+    font-size: 12px;
+    padding: 0 22px 10px 22px;
+    text-align: right;
+}
+/* /CARD */
+
+/* 
+    CAROUSEL 
+    Autor: Miguel Belmonte Granados
+    Last Update: 14/11/2019
+    How to use:
+    .carousel-container -> needed to set the necesary width at the usage .css
+        .carousel-item
+        .controllers -> needed to set the necesary TOP absolute position at the usage .css
+            #prev -> needed to set the necesary LEFT absolute position at the usage .css
+            #next -> needed to set the necesary RIGHT absolute position at the usage .css
+        .fadeInRight -> next item animation, managed with js
+        .fadeInLeft -> prev item animation, managed with js
+    last of all, you need the carousel.js
+*/
+.carousel-container {
+    /* needed to set the necesary width at the usage .css */
+    /* max-width: 940px;
+    min-width: 523px;
+    width: 70%; */
+    margin: 0 auto;
+}
+
+.carousel-item {
+    display: none;
+}
+
+.controllers {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+}
+
+#prev, #next {
+    position: absolute;
+    z-index: 5;
+}
+
+/* 
+-> needed to set the necesary LEFT & RIGHT absolute position at the usage .css
+#next {
+    right: 0px;
+}
+
+#prev {
+    left: 0px;
+} */
+
+#prev:hover, #next:hover {
+    transform: scale(1.1);
+}
+
+/* ANIMATIONS FROM https://daneden.github.io/animate.css/ */
+.fade{
+    -webkit-animation-name:fade;
+    -webkit-animation-duration:2s;
+    animation-name:fade;
+    animation-duration:1s;
+}
+   
+@-webkit-keyframes fade{
+    from{opacity:.4}
+    to{opacity:1}
+}
+
+@keyframes fade{
+    from{opacity:.4}
+    to{opacity:1}
+}
+
+/* ENTER fadeInRight ANIMATION (from right to center)*/
+@-webkit-keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(8%, 0, 0);
+        transform: translate3d(8%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(8%, 0, 0);
+        transform: translate3d(8%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fadeInRight {
+    display: block;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/* /ENTER ANIMATION */
+
+/* EXIT fadeInLeft ANIMATION (from center to left) */
+@-webkit-keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-8%, 0, 0);
+      transform: translate3d(-8%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-8%, 0, 0);
+      transform: translate3d(-8%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInLeft {
+    display: block;
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+/* /CAROUSEL */

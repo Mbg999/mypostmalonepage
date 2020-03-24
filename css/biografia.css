@@ -1,0 +1,34 @@
+/*
+    Autor: Miguel Belmonte Granados
+    Fecha: 14/11/2019
+    Última modificación: 20/11/2019
+*/
+/* CARD */
+.card {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.card-content p {
+    color: teal;
+}
+/* /CARD */
+
+/* CAROUSEL */
+.controllers {
+    top: 30%;
+    padding: 16px;
+}
+
+.controllers > img {
+    width: 30px;
+}
+
+#next {
+    right: 75px;
+}
+
+#prev {
+    left: 75px;
+}
+/* /CAROUSEL */
